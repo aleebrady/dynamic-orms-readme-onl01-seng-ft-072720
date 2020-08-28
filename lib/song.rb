@@ -48,7 +48,6 @@ class Song
       values << "'#{send(col_name)}'" unless send(col_name).nil?
     end
     values.join(", ")
-    binding.pry
   end
 
   def col_names_for_insert
@@ -58,6 +57,7 @@ class Song
   def self.find_by_name(name)
     sql = "SELECT * FROM #{self.table_name} WHERE name = '#{name}'"
     DB[:conn].execute(sql)
+    binding.pry
   end
 
 end
