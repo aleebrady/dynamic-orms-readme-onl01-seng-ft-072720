@@ -7,7 +7,6 @@ class Song
 
   def self.table_name
     self.to_s.downcase.pluralize
-    binding.pry
   end
 
   def self.column_names
@@ -25,6 +24,7 @@ class Song
 
   self.column_names.each do |col_name|
     attr_accessor col_name.to_sym
+    binding.pry
   end
 
   def initialize(options={})
